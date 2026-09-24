@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Xtra</title>
+
+    <link rel="stylesheet" href="xtra.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         AUTH PAGE
+         ===================================================== -->
+
+    <section id="authPage" class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="logo">Xtra</div>
+
+            <p class="logo-subtitle">
+                Your people. Your voice. Your Xtra.
+            </p>
+
+
+            <!-- LOGIN -->
+
+            <div id="loginForm" class="auth-form">
+
+                <h2>Welcome back</h2>
+
+                <p>
+                    Sign in and continue your Xtra journey.
+                </p>
+
+                <input
+                    type="text"
+                    id="loginUsername"
+                    placeholder="Username"
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                >
+
+                <button onclick="login()">
+                    Log In
+                </button>
+
+                <div class="auth-switch">
+                    Don't have an account?
+                    <span onclick="showSignup()">
+                        Create one
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- SIGN UP -->
+
+            <div id="signupForm" class="auth-form hidden">
+
+                <h2>Join Xtra</h2>
+
+                <p>
+                    Create your space and let your Xtra begin.
+                </p>
+
+                <input
+                    type="text"
+                    id="signupUsername"
+                    placeholder="Choose a username"
+                >
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                >
+
+                <button onclick="signup()">
+                    Sign Up
+                </button>
+
+                <div class="auth-switch">
+                    Already have an account?
+                    <span onclick="showLogin()">
+                        Log in
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div
+                id="authMessage"
+                class="auth-message">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAIN XTRA APP
+         ===================================================== -->
+
+    <section id="appPage" class="hidden">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="logo">
+                Xtra
+            </div>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Xtra..."
+                    oninput="searchUsers()"
+                >
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <button
+                    class="icon-btn"
+                    onclick="showPage('notificationsPage')">
+
+                    🔔
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             APP CONTENT
+             ================================================= -->
+
+        <main class="app-container">
+
+
+            <!-- =================================================
+                 HOME PAGE
+                 ================================================= -->
+
+            <section id="homePage" class="page active">
+
+
+                <!-- HERO WELCOME -->
+
+                <div class="xtra-hero">
+
+                    <div class="hero-content">
+
+                        <span class="hero-label">
+                            WELCOME TO XTRA
+                        </span>
+
+                        <h1>
+                            You are here because
+                            <span>your voice matters.</span>
+                        </h1>
+
+                        <p>
+                            Xtra is a place to express yourself,
+                            connect with people, share your world,
+                            discover new possibilities and build
+                            your own identity.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <button
+                                class="hero-primary"
+                                onclick="document.getElementById('postText').focus()">
+
+                                Create your first post
+
+                            </button>
+
+                            <button
+                                class="hero-secondary"
+                                onclick="showPage('orbitPage')">
+
+                                Explore Xtra Orbit
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-orbit">
+
+                        <div class="orbit-ring ring-one"></div>
+                        <div class="orbit-ring ring-two"></div>
+                        <div class="orbit-ring ring-three"></div>
+
+                        <div class="hero-x">
+                            X
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WHY XTRA -->
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="small-label">
+                            THE IDEA
+                        </span>
+
+                        <h2>
+                            Why Xtra?
+                        </h2>
+                    </div>
+
+                    <p>
+                        More than just another social app.
+                    </p>
+
+                </div>
+
+
+                <div class="home-grid">
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Be Heard
+                        </h3>
+
+                        <p>
+                            Share your thoughts, ideas,
+                            creativity and moments without
+                            feeling invisible.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ◉
+                        </div>
+
+                        <h3>
+                            Find Your People
+                        </h3>
+
+                        <p>
+                            Connect with people who share
+                            your interests, dreams and energy.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ◆
+                        </div>
+
+                        <h3>
+                            Share Your World
+                        </h3>
+
+                        <p>
+                            Posts, conversations, videos and
+                            moments — your space, your story.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ★
+                        </div>
+
+                        <h3>
+                            Discover Your Potential
+                        </h3>
+
+                        <p>
+                            Xtra Orbit gives you challenges
+                            designed to help you get discovered.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- USER DASHBOARD -->
+
+                <div class="dashboard-card">
+
+                    <div>
+
+                        <span class="small-label">
+                            YOUR XTRA
+                        </span>
+
+                        <h2>
+                            Welcome,
+                            <span id="homeUsername">
+                                User
+                            </span>
+                        </h2>
+
+                        <p>
+                            This is your space. Make it yours.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-stats">
+
+                        <div>
+                            <strong id="homePostCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Posts
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong id="homeFollowerCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Followers
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong id="homeFollowingCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Following
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            QUICK ACCESS
+                        </span>
+
+                        <h2>
+                            What do you want to do?
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <button
+                        onclick="document.getElementById('postText').focus()">
+
+                        <span>✎</span>
+
+                        <strong>
+                            Create Post
+                        </strong>
+
+                        <small>
+                            Share something
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        onclick="showPage('messagesPage')">
+
+                        <span>◌</span>
+
+                        <strong>
+                            Messages
+                        </strong>
+
+                        <small>
+                            Talk to your people
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        onclick="showPage('orbitPage')">
+
+                        <span>★</span>
+
+                        <strong>
+                            Xtra Orbit
+                        </strong>
+
+                        <small>
+                            Start your challenge
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        onclick="showPage('profilePage')">
+
+                        <span>◎</span>
+
+                        <strong>
+                            Your Profile
+                        </strong>
+
+                        <small>
+                            View your Xtra
+                        </small>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- ORBIT -->
+
+                <div class="home-orbit-card">
+
+                    <div class="orbit-content">
+
+                        <span class="small-label">
+                            XTRA ORBIT
+                        </span>
+
+                        <h2>
+                            Your journey starts here.
+                        </h2>
+
+                        <p>
+                            Complete challenges, earn badges,
+                            build your presence and give people
+                            a chance to discover you.
+                        </p>
+
+                        <button
+                            class="primary-btn"
+                            onclick="showPage('orbitPage')">
+
+                            Explore Orbit
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="orbit-number">
+
+                        <span>
+                            X
+                        </span>
+
+                        <small>
+                            ORBIT
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TRENDING -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            DISCOVER
+                        </span>
+
+                        <h2>
+                            Trending on Xtra
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="trendingPosts"
+                     class="trending-grid">
+
+                    <div class="trend-card">
+
+                        <span>
+                            #WelcomeToXtra
+                        </span>
+
+                        <strong>
+                            Start your journey.
+                        </strong>
+
+                        <small>
+                            Be part of something new.
+                        </small>
+
+                    </div>
+
+
+                    <div class="trend-card">
+
+                        <span>
+                            #XtraOrbit
+                        </span>
+
+                        <strong>
+                            Discover your potential.
+                        </strong>
+
+                        <small>
+                            Challenges are waiting.
+                        </small>
+
+                    </div>
+
+
+                    <div class="trend-card">
+
+                        <span>
+                            #YourVoice
+                        </span>
+
+                        <strong>
+                            Your story matters.
+                        </strong>
+
+                        <small>
+                            Don't be afraid to share it.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CREATE POST -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            YOUR SPACE
+                        </span>
+
+                        <h2>
+                            What's on your mind?
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card create-post">
+
+                    <textarea
+                        id="postText"
+                        placeholder="Share something with Xtra...">
+                    </textarea>
+
+
+                    <div class="post-actions">
+
+                        <span>
+                            Your voice. Your space.
+                        </span>
+
+                        <button
+                            onclick="createPost()">
+
+                            Post
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FEED -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            FEED
+                        </span>
+
+                        <h2>
+                            What's happening
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="feed"></div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SEARCH PAGE
+                 ================================================= -->
+
+            <section
+                id="searchPage"
+                class="page">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            DISCOVER
+                        </span>
+
+                        <h2>
+                            Search Xtra
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="searchResults"
+                    class="search-results">
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NOTIFICATIONS
+                 ================================================= -->
+
+            <section
+                id="notificationsPage"
+                class="page">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            XTRA
+                        </span>
+
+                        <h2>
+                            Notifications
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="notification">
+                    🔔 Welcome to Xtra.
+                </div>
+
+                <div class="notification">
+                    ✦ Your Xtra journey has started.
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MESSAGES
+                 ================================================= -->
+
+            <section
+                id="messagesPage"
+                class="page">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            CONNECT
+                        </span>
+
+                        <h2>
+                            Messages
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="messages-layout">
+
+                    <div
+                        id="messageList"
+                        class="message-list">
+                    </div>
+
+                    <div class="chat-box">
+
+                        <div
+                            id="chatMessages"
+                            class="chat-messages">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROFILE
+                 ================================================= -->
+
+            <section
+                id="profilePage"
+                class="page">
+
+                <div class="profile-header">
+
+                    <div class="profile-main">
+
+                        <div class="profile-avatar">
+
+                            <img
+                                id="profileImage"
+                                src=""
+                                alt="Profile">
+
+                        </div>
+
+                        <div class="profile-info">
+
+                            <h2 id="profileUsername">
+                                User
+                            </h2>
+
+                            <p id="profileBio">
+                                Welcome to my Xtra.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-stats">
+
+                        <div class="stat">
+
+                            <strong id="postCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Posts
+                            </span>
+
+                        </div>
+
+                        <div class="stat">
+
+                            <strong id="followerCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Followers
+                            </span>
+
+                        </div>
+
+                        <div class="stat">
+
+                            <strong id="followingCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Following
+                            </span>
+
+                        </div>
+
+                        <div class="stat">
+
+                            <strong id="likeCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Likes
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h2>
+                        Your Xtra Orbit
+                    </h2>
+
+                    <br>
+
+                    <div id="orbitWins">
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h2>
+                        Your Videos
+                    </h2>
+
+                    <br>
+
+                    <div
+                        id="profileVideos"
+                        class="video-grid">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ORBIT PAGE
+                 ================================================= -->
+
+            <section
+                id="orbitPage"
+                class="page">
+
+                <div class="home-orbit-card orbit-page-card">
+
+                    <div class="orbit-content">
+
+                        <span class="small-label">
+                            XTRA ORBIT
+                        </span>
+
+                        <h1>
+                            Become discoverable.
+                        </h1>
+
+                        <p>
+                            Xtra Orbit is built around challenges
+                            that give everyday people an opportunity
+                            to grow, participate and get noticed.
+                        </p>
+
+                        <br>
+
+                        <button
+                            class="primary-btn"
+                            onclick="showPage('homePage')">
+
+                            Back to Xtra
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="orbit-number">
+
+                        <span>
+                            X
+                        </span>
+
+                        <small>
+                            ORBIT
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SETTINGS
+                 ================================================= -->
+
+            <section
+                id="settingsPage"
+                class="page">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="small-label">
+                            XTRA
+                        </span>
+
+                        <h2>
+                            Settings
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-section">
+
+                    <h3>
+                        Appearance
+                    </h3>
+
+                    <div class="setting-item">
+
+                        <div>
+
+                            <strong>
+                                Dark Mode
+                            </strong>
+
+                            <p>
+                                Keep the mature Xtra dark theme.
+                            </p>
+
+                        </div>
+
+                        <div
+                            id="darkToggle"
+                            class="toggle"
+                            onclick="toggleDarkMode()">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-section">
+
+                    <h3>
+                        Privacy
+                    </h3>
+
+                    <div class="setting-item">
+
+                        <div>
+
+                            <strong>
+                                Private Account
+                            </strong>
+
+                            <p>
+                                Control who can interact with you.
+                            </p>
+
+                        </div>
+
+                        <div
+                            id="privacyToggle"
+                            class="toggle"
+                            onclick="togglePrivacy()">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-section">
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <div class="setting-item">
+
+                        <div>
+
+                            <strong>
+                                Log out
+                            </strong>
+
+                            <p>
+                                Leave this Xtra session.
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="secondary-btn"
+                            onclick="logout()">
+
+                            Log out
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             BOTTOM NAV
+             ================================================= -->
+
+        <nav class="bottom-nav">
+
+            <div
+                class="nav-item active"
+                onclick="showPage('homePage')">
+
+                <span>⌂</span>
+                Home
+
+            </div>
+
+
+            <div
+                class="nav-item"
+                onclick="showPage('searchPage')">
+
+                <span>⌕</span>
+                Search
+
+            </div>
+
+
+            <div
+                class="nav-item"
+                onclick="showPage('messagesPage')">
+
+                <span>◌</span>
+                Messages
+
+            </div>
+
+
+            <div
+                class="nav-item"
+                onclick="showPage('orbitPage')">
+
+                <span>★</span>
+                Orbit
+
+            </div>
+
+
+            <div
+                class="nav-item"
+                onclick="showPage('profilePage')">
+
+                <span>◎</span>
+                Profile
+
+            </div>
+
+
+            <div
+                class="nav-item"
+                onclick="showPage('settingsPage')">
+
+                <span>⚙</span>
+                Settings
+
+            </div>
+
+        </nav>
+
+    </section>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
